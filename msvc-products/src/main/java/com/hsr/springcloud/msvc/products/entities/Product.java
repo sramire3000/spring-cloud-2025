@@ -10,20 +10,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="products")
+@Table(name = "products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", columnDefinition = "varchar(45)", nullable = false)
     private String name;
 
     @Column(name = "price")
     private Double price;
 
-    @Column(name="create_at")
+    @Column(name = "create_at")
     private LocalDate createAt;
 
     public Long getId() {
@@ -57,6 +57,5 @@ public class Product {
     public void setCreateAt(LocalDate createAt) {
         this.createAt = createAt;
     }
-
 
 }
